@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/c_style.css') }}">
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/about.css') }}">
+    <title>About me</title>
+{% endblock %}
+    
+{% block body %}
+    <div class="title_description">
+        <h2 class="title"> - About Me - </h2>
+        <div class="title_wrapper">
+            <p class="description" id="text">
+                In this page I'll talk a little about
+                myself, if you want to know a little bit more
+                in depth, check out my LinkedIn
+            </p>
+            <a href="https://www.linkedin.com/in/charbel-breydy-torres-9483741b9" id="linkedin_icon"> <i class="fa fa-linkedin-square fa-2x"  aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+    <div class="description_intro">
+        <h3 class="subtitles">Hey!!</h3>
+        <div class="deco_line"></div>
+        <p class="brief_desc">
+            I am a robotics and artificial intelligence engineer, full of creativity
+            and passion for Robot building and machine learning.
+        </p>
+        <h3 class="subtitles">Languages??</h3>
+        <div class="deco_line"></div>
+        <p class="brief_desc">
+            Human languages? well, I speak French, Arabic, Lebanese, Spanish, English
+            and Italian, if computer languages is what you are looking for too, I have
+            Python, Java and C. And currently learning JavaScript.
+        </p>
+        <h3 class="subtitles">How??</h3>
+        <div class="deco_line"></div>
+        <p class="brief_desc">
+            EdX, Youtube, Books, Udemy and LeetCode.
+            Some nights my brain works faster, so I've dedicated most of my sleep hours
+            to coding and learning. Challenge accepted.
+        </p>
+    </div>
+{% endblock %}

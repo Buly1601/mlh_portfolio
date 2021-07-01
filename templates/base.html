@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/c_style.css') }}">
+    <title>{{ title }}</title>
+    <!--upper menu-->
+    <div class="upper_menu">
+        <p class="menu_buttons"> <a href="/">- Main Page -</a></p>
+        <div class="sep_line" id="up_men_line"></div>
+        <p class="menu_buttons"> <a href="/projects"> - Works - </a></p>
+        <div class="sep_line" id="up_men_line"></div>
+        <p class="menu_buttons"> <a href="/about"> - About Me - </a></p>
+        <div class="sep_line" id="up_men_line"></div>
+        <p class="menu_buttons"> <a href="/contact"> - Contact - </a></p>
+    </div>
+    {% block head %} {% endblock %}
+</head>
+<body>
+    {% block body %} {% endblock %}
+</body>
+</html>

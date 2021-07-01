@@ -1,0 +1,50 @@
+/*
+    Global used classes
+*/
+.sep_line{
+  width: 0.7px;
+  background-color: black;
+}
+
+p, h1, h2, h3, h4, h5, h6, .text, input, button{
+  font-family: 'Baloo Tammudu 2', cursive;
+  color: white;
+}
+
+body{
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 96vh;
+}
+/*
+  Upper menu styling
+*/
+.upper_menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 2%;
+  margin-top: 1%;
+  width: 50%;
+}
+
+.menu_buttons{
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.menu_buttons:hover{
+  text-decoration: underline;
+}
+
+#up_men_line{
+  height: 35px;
+  background-color: white;
+  align-self: center;
+}
+
+:any-link{
+  color: #6AFB92;
+  text-decoration: none;
+}

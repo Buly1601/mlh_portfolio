@@ -1,0 +1,42 @@
+
+
+.title-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 1%;
+}
+
+.login-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
+
+.login-query{
+    font-size: 30px;
+}
+
+input{
+    resize: none;
+    width: 20%;
+    font-size: 20px;
+}
+
+.deco_line{
+    margin-top: 2%;
+    width: 30%;
+    justify-self: center;
+    height: 1px;
+    background-color: gold;
+}

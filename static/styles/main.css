@@ -1,0 +1,42 @@
+.bdy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    font-family: "Roboto", serif;
+}
+
+.profile h1 {
+        font-size: 50px;
+        font-weight: 700;
+        color: white;
+}
+
+
+.h1Container {
+    position: relative;
+    width: 50%;
+    font-size: 35px;
+    display:flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 5%;
+    margin-top: 19%;
+}
+
+.img{
+    margin-top: 5%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#works_img{
+    height: 80%;
+    width: auto;
+    padding: 2%;
+    border: solid 3px #6AFB92;
+}

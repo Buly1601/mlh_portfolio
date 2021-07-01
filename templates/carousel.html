@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/carousel.css') }}">
+{% endblock %}
+
+{% block body %}
+    <!--page title and subtitle-->
+    <div class="title_sub">
+        <h2 class="title"> - Works - </h2>
+        <div class="subtitle">
+            <p class="check_git">
+                For all my projects and 
+                repositories check my GitHub 
+            </p>
+            <a href="https://github.com/Buly1601" class="github"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+    </div>
+    
+    <!--carousel-->
+    <div class="slideshow-container" data-ride="carousel">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade" id="slides_container">
+        <div class="numbertext">1 / 3</div>
+        <div class="row_style">
+          <img id="works_img" src="./static/img/tictactoe_ss.png" style="width: 700px; height: 400px;"/>
+          <div class="text">
+            <p>
+              This is a TicTacToe made with Python, It's made for two players, a human 
+              and an AI, that looks at all of the possible states that can be inferred
+              from the board, and plays optimally.
+            </p>
+            <button id="tictactoe"><p id="but_text">Find out more</p></button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="mySlides fade" id="slides_container">
+        <div class="numbertext">2 / 3</div>
+        <div class="row_style">
+          <img id="works_img" src="./static/img/focus.png" style="width: 700px; height: 400px;"/>
+          <div class="text">
+            <p>
+              As a participant in SFU's StormHacks 2021 hackathon,
+              Focus was created in 24 hours to enhance images of people.
+              This Google Chrome extension removes the background of
+              images through machine learning and segmentation analysis.
+            </p>
+            <button id="linh1"><p id="but_text">Find out more</p></button>
+          </div>
+        </div>
+        
+      </div>
+    
+      <div class="mySlides fade" id="slides_container">
+        <div class="numbertext">3 / 3</div>
+        <div class="row_style">
+          <img id="works_img" src="./static/img/earthstory.png" style="width: 700px; height: 400px;"/>
+          <div class="text">
+            <p>
+              As part of the Ecocity 2019 Summit, EarthStory was created to
+              bring awareness to the ongoing climate crisis. This mobile-exclusive
+              web application visually show how the choices we make shape our world.
+            </p>
+            <button id="linh2"><p id="but_text">Find out more</p></button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
+    <script src="{{url_for('static', filename='scripts/carousel.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/buttons.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,56 @@
+.title_description{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 0.5%;
+}
+
+.title_wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 90%;
+    justify-content: center;
+}
+
+.description{
+    color: white;
+    font-size: 17px;
+}
+
+#linkedin_icon{
+    align-content: center;
+    align-self: center;
+    margin-left: 1%;
+}
+
+.description_intro{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 5%;
+    width: 40%;
+}
+
+.subtitles{
+    font-size: 20px;
+    color: white;
+    
+}
+
+.brief_desc{
+    color: white;
+    font-size: 15px;
+}
+
+.deco_line{
+    width: 30%;
+    justify-self: center;
+    height: 1px;
+    background-color: #6AFB92;
+}

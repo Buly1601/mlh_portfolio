@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/contact.css') }}">
+    <title>Contact</title>
+{% endblock %}
+
+{% block body %}
+    <div class="title_sub">
+        <h2 class="title"> - Contact me - </h2>
+    </div>
+
+    <div class="contact_info">
+        <div class="form-group">
+            <input type="email" class="form-control" id="input_email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="input_subject" placeholder="Subject">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="message" placeholder="Message"></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+    </div>
+{% endblock %}
