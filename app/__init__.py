@@ -1,8 +1,8 @@
 import os
 from flask import request, Flask, render_template, send_from_directory
 from werkzeug.security import generate_password_hash, check_password_hash
-from app.db import get_db
-from . import db
+from db import get_db
+import db
 
 # Flask uses load_dotenv by default
 app = Flask(__name__)	
