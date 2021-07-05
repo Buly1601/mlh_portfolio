@@ -1,16 +1,36 @@
 import os
-from flask import request, Flask, render_template, send_from_directory
-from werkzeug.security import generate_password_hash, check_password_hash
-from app.db import get_db
-from . import db
+from flask import Flask, render_template, request
+from werkzeug.security import check_password_hash, generate_password_hash
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
-# Flask uses load_dotenv by default
-app = Flask(__name__)	
 
-# add the datbase
-app.config["DATABASE"] = os.path.join(os.getcwd(), "flask.sqlite")
-db.init_app(app)
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
+    user=os.getenv('POSTGRES_USER'),
+    passwd=os.getenv('POSTGRES_PASSWORD'),
+    host=os.getenv('POSTGRES_HOST'),
+    port=5432,
+    table=os.getenv('POSTGRES_DB'))
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+
+class UserModel(db.Model):
+    __tablename__ = 'users'
+
+    username = db.Column(db.String(), primary_key=True)
+    password = db.Column(db.String())
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+    def __repr__(self):
+        return f"<User {self.username}>"
 # main page    
 @app.route('/')
 def index():
@@ -31,28 +51,23 @@ def contact():
 
 @app.route("/register", methods=["POST","GET"])
 def register():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        db = get_db()
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
         error = None
 
         if not username:
-            error = "Username is required."
+            error = 'Username is required.'
         elif not password:
-            error = "Password is required."
-        elif db.execute(
-            "SELECT id FROM user WHERE username = ?", (username)
-            ).fetchone() != None:
-            error = f"user {username} already exists"
-        
-        if error == None:
-            db.execute(
-                "INSERT INTO user (username,password) VALUES (?,?)",
-                (username, generate_password_hash(password))
-            )
-            db.commit()
-            return f"user {username} created successfully"
+            error = 'Password is required.'
+        elif UserModel.query.filter_by(username=username).first() is not None:
+            error = f"User {username} is already registered."
+
+        if error is None:
+            new_user = UserModel(username, generate_password_hash(password))
+            db.session.add(new_user)
+            db.session.commit()
+            return f"User {username} created successfully"
         else:
             return error, 418
 
@@ -61,22 +76,19 @@ def register():
 
 @app.route("/login", methods=["POST","GET"])
 def login():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        db = get_db()
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
         error = None
-        user = db.execute(
-            "SELECT * FROM user WHERE username = ?", (username)
-        ).fetchone()
+        user = UserModel.query.filter_by(username=username).first()
 
-        if not user:
-            error = "Incorrect username."
-        elif not check_password_hash(user['password'], password):
-                error = "Incorrect password."
-        
-        if not error:
-            return "Login successful", 200
+        if user is None:
+            error = 'Incorrect username.'
+        elif not check_password_hash(user.password, password):
+            error = 'Incorrect password.'
+
+        if error is None:
+            return "Login Successful", 200
         else:
             return error, 418
 
