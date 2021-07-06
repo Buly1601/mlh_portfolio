@@ -24,7 +24,7 @@ jobs:
       - 
         name: Build the docker container
         run: |
-          docker-compose up --build
+          docker-compose up -d --build
       
       - 
         name: Install Python dependencies
