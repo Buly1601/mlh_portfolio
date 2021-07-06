@@ -1,0 +1,34 @@
+name: Deplo
+
+on:
+  push:
+    branches:
+      -main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to AWS instance
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Configue ssh
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
+          chmod 600 ~/.ssh/deploy-key.pem
+          cat >> ~/.ssh/config <<END
+          Host my-vm
+            HostName $SSH_IP
+            User $SSH_USER
+            IdentityFile ~/.ssh/deploy-key.pem
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_CENTOS_KEY }}
+          SSH_IP: ${{ secrets.SSP_IP }}
+      
+      -
+        name: print project root dierctory
+        run: ssh my-vm "cd ${{ secrets.PROJECT_ROOT }} && pwd"
