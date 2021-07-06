@@ -31,4 +31,4 @@ jobs:
       
       -
         name: print project root dierctory
-        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && pwd'
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && git fetch && git reset --hard origin/main && docker-compose -d --build'
