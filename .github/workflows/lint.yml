@@ -1,0 +1,38 @@
+name: Lint
+on:
+  # Trigger the workflow on push or pull request
+  # for the main branch only
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # name of the job
+  run-linters:
+    name: Run Linters
+    runs-on: ubuntu-latest
+    # define the steps
+    steps:
+      # clone and checkout the master branch of our repository that Actions can access.
+      - 
+        name: Check out Git Repository
+        uses: actions/checkout@v2
+
+      - 
+        name: Build the docker container
+        run: |
+          docker-compose up --build
+      
+      - 
+        name: Install Python dependencies
+        run: pip install flake8 black
+      
+      - 
+        name: Run Linters
+        uses: wearerequired/lint-action@v1.10.0
+        with:
+          black: true
+          flake8: true
