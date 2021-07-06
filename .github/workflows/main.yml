@@ -27,7 +27,7 @@ jobs:
         env:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_CENTOS_KEY }}
-          SSH_IP: ${{ secrets.SSP_IP }}
+          SSH_IP: ${{ secrets.SSH_IP }}
       
       -
         name: print project root dierctory
