@@ -37,7 +37,7 @@ jobs:
      
       -
         name: Build and push Docker images
-        uses: docker/bake-action@main
+        uses: docker/bake-action@master
         with: 
           push: true
         
