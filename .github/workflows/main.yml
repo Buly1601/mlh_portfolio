@@ -30,5 +30,9 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
       
       -
-        name: print project root dierctory
+        name: Start docker-container
         run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT }} && git fetch && git reset --hard origin/main && docker-compose up -d --build'
+      
+      -
+        name: Status print
+        run: status-check 'cd ${{/home/centos/enpoint-test}} && source end-testing.sh'
