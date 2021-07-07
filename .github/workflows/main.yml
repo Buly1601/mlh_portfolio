@@ -35,4 +35,4 @@ jobs:
       
       -
         name: Status print
-        run: 'cd /home/centos/enpoint-test && source end-testing.sh'
+        run: ssh my-vm 'cd /home/centos/enpoint-test && source end-testing.sh'
