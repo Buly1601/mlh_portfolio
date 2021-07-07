@@ -35,4 +35,4 @@ jobs:
       
       -
         name: Status print
-        run: status-check 'cd ${{/home/centos/enpoint-test}} && source end-testing.sh'
+        run: status-check 'cd /home/centos/enpoint-test && source end-testing.sh'
