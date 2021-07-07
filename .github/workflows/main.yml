@@ -40,3 +40,7 @@ jobs:
       -
         name: Status print
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+        
+      - 
+        name: Status check
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT/enpoint-test }} && source end-testing.sh '
