@@ -39,4 +39,4 @@ jobs:
       
       -
         name: Status print
-        run: ssh my-vm 'cd /home/centos/enpoint-test && source end-testing.sh'
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
