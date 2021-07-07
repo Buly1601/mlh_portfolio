@@ -43,4 +43,4 @@ jobs:
         
       - 
         name: Status check
-        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT/enpoint-test }} && source end-testing.sh '
+        run: ssh my-vm 'cd ${{ secrets.PROJECT_ROOT/enpoint-test }} && bash end-testing.sh '
