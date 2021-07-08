@@ -41,7 +41,7 @@ textarea:focus{
 
 .form-group {
     width: 400px;
-    padding-bottom: 2%;
+    padding: 1.5%;
 }
 .form-control{
     width: 100%;
@@ -52,16 +52,24 @@ textarea:focus{
     background-color: transparent;
     color: white;
     width: 8%;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
     border: none;
+    border-top: 1.5px solid #6AFB92;
     border-bottom: 1px solid #6AFB92;
-    padding-bottom: 0.8%;
+    padding: 0.8%;
 }
 
 .btn:hover{
-    color: #6AFB92;
-    border-bottom: 1.5px solid #ffffff;
+    border: none;
+    border-left: 1px solid #6AFB92;
+    border-right: 1px solid #6AFB92;
 }
 
->>>>>>> 85e8ea7 (env commit)
+.contact_info{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
