@@ -19,6 +19,7 @@ input{
     border-bottom: 1px solid #6AFB92;
     color: white;
     font-size: 30px;
+    margin: 2%;
 }
 
 input:focus{
