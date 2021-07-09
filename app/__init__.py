@@ -49,6 +49,10 @@ def about_me():
 def contact():
     return render_template("contact.html", title="Contact", url=os.getenv("URL"))
 
+@app.route("/contact-successful")
+def contact_sucessful():
+    return render_template("contact_success.html", title="Contact", url=os.getenv("URL"))
+
 @app.route("/register", methods=["POST","GET"])
 def register():
     if request.method == 'POST':
