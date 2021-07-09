@@ -1,0 +1,15 @@
+{% extends 'contact.html' %}
+
+{% block head %}
+    <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/contact-success.css') }}">
+    <title>Contact Success</title>
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="success-circle"><i class="fa fa-share fa-4x" aria-hidden="true" id="fa-success"></i></div>
+        <div class="success-text">
+            <h1 class="success-t">Email Sent!</h1>
+        </div>
+    </div>
+{% endblock %}
