@@ -3,10 +3,10 @@ document.getElementById("tictactoe").onclick = function () {
     location.href = "https://github.com/Buly1601/tictactoe";
 }
 
-document.getElementById("linh1").onclick = function () {
-    location.href = "https://github.com/focus-storm";
+document.getElementById("mind").onclick = function () {
+    location.href = "https://github.com/Buly1601/MindYourTasks";
 }
 
-document.getElementById("linh2").onclick = function () {
-    location.href = "https://github.com/truongnguyenlinh/earthstory";
+document.getElementById("port").onclick = function () {
+    location.href = "https://github.com/Buly1601/mlh_portfolio";
 }
