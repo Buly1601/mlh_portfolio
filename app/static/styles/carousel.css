@@ -41,7 +41,7 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  width: 70%;
   position: relative;
   margin: auto;
   border: 2px solid white;
@@ -61,7 +61,7 @@
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: #6AFB92;
+  color: gold;
   font-weight: bold;
   font-size: 18px;
   border-radius: 0 3px 3px 0;
@@ -94,7 +94,7 @@
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #6AFB92;
+  color: gold;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
@@ -114,7 +114,7 @@
 }
 
 .active, .dot:hover {
-  background-color: #6AFB92;
+  background-color: gold;
 }
 
 /* Fading animation */

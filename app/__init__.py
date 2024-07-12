@@ -1,45 +1,19 @@
 import os
 from flask import Flask, render_template, request
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
-    user=os.getenv('POSTGRES_USER'),
-    passwd=os.getenv('POSTGRES_PASSWORD'),
-    host=os.getenv('POSTGRES_HOST'),
-    port=5432,
-    table=os.getenv('POSTGRES_DB'))
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-
-
-class UserModel(db.Model):
-    __tablename__ = 'users'
-
-    username = db.Column(db.String(), primary_key=True)
-    password = db.Column(db.String())
-
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-    def __repr__(self):
-        return f"<User {self.username}>"
 # main page    
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
+    return render_template('main_page.html', title="MLH Fellow", url=os.getenv("URL"))
 
 # external pages    
 @app.route("/projects")
 def carousel():
-    return render_template("carousel.html", title="works", url=os.getenv("URL"))
+    return render_template("projects.html", title="works", url=os.getenv("URL"))
 
 @app.route("/about")
 def about_me():
