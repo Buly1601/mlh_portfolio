@@ -1,0 +1,115 @@
+.title_description{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 0.5%;
+}
+
+.title_wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 90%;
+    justify-content: center;
+}
+
+.description{
+    color: white;
+    font-size: 17px;
+}
+
+#linkedin_icon{
+    align-content: center;
+    align-self: center;
+    margin-left: 1%;
+}
+
+.description_intro{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 5%;
+    width: 40%;
+}
+
+.subtitles{
+    font-size: 20px;
+    color: white;
+    
+}
+
+.brief_desc{
+    color: white;
+    font-size: 15px;
+}
+
+.deco_line{
+    width: 30%;
+    justify-self: center;
+    height: 1px;
+    background-color: #6AFB92;
+}
+
+#under_title{
+    font-size: 17px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    margin-top: 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slide {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.text {
+    width: 50%;
+    text-align: center;
+}
+
+.slides {
+    width: 50%;
+}
+
+.carousel img {
+    width: 40%;
+    height: 30%;
+}
+
+.carousel .dots {
+    text-align: center;
+}
+
+.carousel .dot {
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    background-color: gold;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 2s ease;
+}
+
+.carousel .active {
+    background-color: gold;
+}
+
+.show {
+    display: flex !important;
+    opacity: 1 !important;
+}

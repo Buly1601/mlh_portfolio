@@ -8,6 +8,8 @@
     <meta property="og:description" content="My Personal Portfolio">
     <meta property="og:url" content="{{ url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <link rel= "stylesheet" href= "{{ url_for('static',filename='styles/c_style.css') }}">
@@ -16,11 +18,16 @@
     <div class="upper_menu">
         <p class="menu_buttons"> <a href="/">- Main Page -</a></p>
         <div class="sep_line" id="up_men_line"></div>
-        <p class="menu_buttons"> <a href="/projects"> - Works - </a></p>
-        <div class="sep_line" id="up_men_line"></div>
         <p class="menu_buttons"> <a href="/about"> - About Me - </a></p>
         <div class="sep_line" id="up_men_line"></div>
+        <p class="menu_buttons"> <a href="/projects"> - Works - </a></p>
+        <div class="sep_line" id="up_men_line"></div>
         <p class="menu_buttons"> <a href="/contact"> - Contact Me - </a></p>
+        <div class="sep_line" id="up_men_line"></div>
+        <a href="https://github.com/Buly1601" class="icon"><i class="fa fa-github fa-2x"></i></a>
+        <div class="sep_line" id="up_men_line"></div>
+        <a href="https://www.linkedin.com/in/charbel-breydy-torres-9483741b9/" class="icon"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        </div>
     </div>
     {% block head %} {% endblock %}
 </head>

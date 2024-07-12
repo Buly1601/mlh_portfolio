@@ -7,7 +7,7 @@
 }
 
 p, h1, h2, h3, h4, h5, h6, .text, input, button{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: white;
 }
 
@@ -15,7 +15,9 @@ body{
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 96vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 /*
   Upper menu styling
@@ -24,9 +26,10 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-left: 2%;
+  
   margin-top: 1%;
-  width: 50%;
+  width: auto;
+  padding: 1%;
 }
 
 .menu_buttons{
@@ -45,6 +48,10 @@ body{
 }
 
 :any-link{
-  color: #6AFB92;
+  color: gold;
   text-decoration: none;
+}
+
+.icon{
+  padding-top: 1%;
 }
